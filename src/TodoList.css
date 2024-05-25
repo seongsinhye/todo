@@ -12,11 +12,11 @@
 .title{
   color: white;
   font-size: 64px;
-
+  padding-bottom: 10px;
 }
 
 .container{
-  margin-top: 50px;
+  margin-top: 20px;
   width: 1300px;
   height: 800px;
   background-color: aliceblue;
