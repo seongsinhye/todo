@@ -1,5 +1,5 @@
 .App-header {
-  background-color: #47438a;
+  background-color: #434249;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,5 +19,12 @@
   margin-top: 20px;
   width: 1300px;
   height: 800px;
-  background-color: aliceblue;
+  background-color: rgb(16, 14, 56);
+  border-radius: 20px;
+}
+
+.mainContainer{
+  background-color: rgb(40, 40, 59);
+  width: 1300px;
+  height: 530px;
 }
