@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 
 export default function AddContainer({todoList, setTodlListAll }) {
   const [addTodo, setAddTodo] = useState('');
+
   const handelChange = (e) => setAddTodo(e.target.value);
+  
   const handelSubmit = (e) => {
     e.preventDefault();
     const newTodo = {

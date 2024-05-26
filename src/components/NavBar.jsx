@@ -3,8 +3,24 @@ import { GrSun } from "react-icons/gr";
 import '/Users/seongsinhye/Desktop/project/react/todo/src/css/NavBar.css' 
 
 
-export default function NavBar({darkBtnHovered, darkModeClick}) {
-  
+export default function NavBar({darkBtnHovered, darkModeClick, setTodlListAll, originalTodoList}) {
+  const allBtn = () => {
+    setTodlListAll(originalTodoList)
+  }
+
+  const activeBtn = () => {
+    setTodlListAll(prev => {
+      const updateList = prev.filter((todo) => todo.checked == false)
+      return updateList;
+    })
+  }
+
+  const completedBtn = () => {
+    setTodlListAll(prev => {
+      const updateList = prev.filter((todo) => todo.checked == true)
+      return updateList;
+    })
+  }
 
   return (
     <>
@@ -17,9 +33,9 @@ export default function NavBar({darkBtnHovered, darkModeClick}) {
        style = {{ position : 'absolute', left : '70px', top : '43px'}} />
       </div>
       <div className='menuBar'>
-        <div className={darkBtnHovered ? 'lightItem' :'item'}>ALL</div>
-        <div className={darkBtnHovered ? 'lightItem' :'item'}>Active</div>
-        <div className={darkBtnHovered ? 'lightItem' :'item'}>Completed</div>
+        <div className={darkBtnHovered ? 'lightItem' :'item'} onClick={allBtn}>ALL</div>
+        <div className={darkBtnHovered ? 'lightItem' :'item'} onClick={activeBtn}>Active</div>
+        <div className={darkBtnHovered ? 'lightItem' :'item'} onClick={completedBtn}>Completed</div>
       </div>
     </>
   );

@@ -11,7 +11,7 @@ export default function TodoList() {
   const todoList = [
     {
       title : '청소하기',
-      checked : true,
+      checked : false,
       index : 0
     },
     {
@@ -25,9 +25,11 @@ export default function TodoList() {
       index : 2
     },
   ]
-
+  const [originalTodoList, setOriginalTodoList] = useState(todoList);
   const [todoListAll, setTodlListAll] = useState(todoList);
   const updateTodoList = (updatedList) => {
+    console.log("updateList", updatedList);
+    setOriginalTodoList(updatedList);
     setTodlListAll(updatedList);
   };
 
@@ -41,9 +43,11 @@ export default function TodoList() {
       <RiCalendarTodoLine style={{fontSize : '64px'}}/>
       <div className='title'>Todo List</div>
       <div className={darkBtnHovered ? 'lightContainer' : 'container'}>
-        <NavBar darkModeClick={darkModeClick} darkBtnHovered={darkBtnHovered}/>
+        <NavBar darkModeClick={darkModeClick} darkBtnHovered={darkBtnHovered} todoList={todoListAll} 
+        setTodlListAll={updateTodoList}   originalTodoList={originalTodoList}/>
         <MainContainer darkBtnHovered={darkBtnHovered} todoList={todoListAll} setTodlListAll={updateTodoList} />
-        <AddContainer todoList={todoListAll}  setTodlListAll={updateTodoList}/>
+        <AddContainer todoList={todoListAll}  setTodlListAll={updateTodoList} 
+        setOriginalTodoList={setOriginalTodoList}  originalTodoList={originalTodoList}/>
       </div>
     </header>
    </>
