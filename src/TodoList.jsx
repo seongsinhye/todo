@@ -43,7 +43,7 @@ export default function TodoList() {
       <div className={darkBtnHovered ? 'lightContainer' : 'container'}>
         <NavBar darkModeClick={darkModeClick} darkBtnHovered={darkBtnHovered}/>
         <MainContainer darkBtnHovered={darkBtnHovered} todoList={todoListAll} setTodlListAll={updateTodoList} />
-        <AddContainer />
+        <AddContainer todoList={todoListAll}  setTodlListAll={updateTodoList}/>
       </div>
     </header>
    </>
