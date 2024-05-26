@@ -111,3 +111,8 @@
   right: 80px;
   cursor: pointer;
 }
+
+.emptyIcon{
+  padding: 200px;
+  position: absolute;
+}
