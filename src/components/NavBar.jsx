@@ -9,14 +9,14 @@ export default function NavBar({darkBtnHovered, darkModeClick, setTodlListAll, o
 
   const activeBtn = () => {
     setTodlListAll(prev => {
-      const updateList = prev.filter((todo) => todo.checked == false)
+      const updateList = prev.filter((todo) => todo.checked === false)
       return updateList;
     })
   }
 
   const completedBtn = () => {
     setTodlListAll(prev => {
-      const updateList = prev.filter((todo) => todo.checked == true)
+      const updateList = prev.filter((todo) => todo.checked === true)
       return updateList;
     })
   }
