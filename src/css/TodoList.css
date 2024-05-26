@@ -23,8 +23,91 @@
   border-radius: 20px;
 }
 
+.lightContainer{
+  margin-top: 20px;
+  width: 1300px;
+  height: 800px;
+  background-color: rgb(206, 205, 232);
+  border-radius: 20px;
+}
+
 .mainContainer{
   background-color: rgb(40, 40, 59);
   width: 1300px;
   height: 530px;
+}
+
+.mainLightContainer{
+  background-color: rgb(142, 140, 212);
+  width: 1300px;
+  height: 530px;
+}
+
+.AddBox{
+  width: 1200px;
+  height: 70px;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 30px;
+  background-color: white;
+}
+.AddInput{
+  border: none;
+  width: 958px;
+  font-size: 32px;
+  margin-left: 30px;
+  padding-left: 10px;
+}
+
+.AddBtn{
+  font-weight: 600;
+  width: 200px;
+  height: 70px;
+  background-color: rgb(244, 141, 38);
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  border: none;
+  border-radius: 0px 20px 20px 0px
+}
+
+.todoItemList{
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 0;
+  position: relative;
+}
+
+.checkbox{
+  width: 40px; 
+  height: 40px; 
+  position: absolute;
+  left: 40px;
+}
+
+.listTitle{
+  font-size: 40px;
+  position: absolute;
+  left: 130px;
+}
+
+.lightListTitle{
+  color: #24242a;
+  font-size: 40px;
+  position: absolute;
+  left: 130px;
+}
+
+
+.trashIcon{
+  position: absolute;
+  right: 80px;
+  cursor: pointer;
+}
+
+.ligthTrashIcon{
+  color: #24242a;
+  position: absolute;
+  right: 80px;
+  cursor: pointer;
 }

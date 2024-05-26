@@ -5,9 +5,18 @@
 .menuBar{
   display: flex;
   justify-content: flex-end;
+  height: 140px;
 }
 .item {
   padding: 60px;
   font-size: 32px;
   color: rgb(255, 153, 0);
+  cursor: pointer;
+}
+
+.lightItem {
+  cursor: pointer;
+  padding: 60px;
+  font-size: 32px;
+  color: rgb(73, 45, 2);
 }
