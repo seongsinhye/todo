@@ -1,6 +1,5 @@
 import React from 'react';
 import { GrSun } from "react-icons/gr";
-import '/Users/seongsinhye/Desktop/project/react/todo/src/css/NavBar.css' 
 
 
 export default function NavBar({darkBtnHovered, darkModeClick, setTodlListAll, originalTodoList}) {
