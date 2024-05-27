@@ -28,14 +28,17 @@ export default function TodoList() {
   const [originalTodoList, setOriginalTodoList] = useState(todoList);
   const [todoListAll, setTodlListAll] = useState(todoList);
   const updateTodoList = (updatedList) => {
-    console.log("updateList", updatedList);
-    setOriginalTodoList(updatedList);
     setTodlListAll(updatedList);
   };
 
+  const orginUpdate = (updatedList) => {
+    setOriginalTodoList(updatedList);
+  }
+
+
   useEffect(() => {
-    console.log("todoItem update:", todoListAll);
-  }, [todoListAll]);
+    console.log("todoItem update:", originalTodoList);
+  }, [originalTodoList]);
 
   return (
    <>
@@ -44,10 +47,10 @@ export default function TodoList() {
       <div className='title'>Todo List</div>
       <div className={darkBtnHovered ? 'lightContainer' : 'container'}>
         <NavBar darkModeClick={darkModeClick} darkBtnHovered={darkBtnHovered} todoList={todoListAll} 
-        setTodlListAll={updateTodoList}   originalTodoList={originalTodoList}/>
+        setTodlListAll={updateTodoList} setOriginalTodoList={orginUpdate} originalTodoList={originalTodoList}/>
         <MainContainer darkBtnHovered={darkBtnHovered} todoList={todoListAll} setTodlListAll={updateTodoList} />
         <AddContainer todoList={todoListAll}  setTodlListAll={updateTodoList} 
-        setOriginalTodoList={setOriginalTodoList}  originalTodoList={originalTodoList}/>
+        setOriginalTodoList={orginUpdate}  originalTodoList={originalTodoList}/>
       </div>
     </header>
    </>

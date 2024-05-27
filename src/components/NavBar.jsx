@@ -2,9 +2,9 @@ import React from 'react';
 import { GrSun } from "react-icons/gr";
 
 
-export default function NavBar({darkBtnHovered, darkModeClick, setTodlListAll, originalTodoList}) {
+export default function NavBar({darkBtnHovered, darkModeClick, setTodlListAll, originalTodoList, setOriginalTodoList}) {
   const allBtn = () => {
-    setTodlListAll(originalTodoList)
+    setOriginalTodoList(prev => [...prev])
   }
 
   const activeBtn = () => {

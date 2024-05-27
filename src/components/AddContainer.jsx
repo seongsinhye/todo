@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function AddContainer({todoList, setTodlListAll }) {
+export default function AddContainer({todoList, setTodlListAll, setOriginalTodoList }) {
   const [addTodo, setAddTodo] = useState('');
 
   const handelChange = (e) => setAddTodo(e.target.value);
@@ -13,6 +13,7 @@ export default function AddContainer({todoList, setTodlListAll }) {
       index : todoList.length
     }
     setTodlListAll(prev => [...prev , newTodo])
+    setOriginalTodoList(prev => [...prev , newTodo])
   }
 
 
