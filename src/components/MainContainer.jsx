@@ -14,7 +14,10 @@ export default function MainContainer({darkBtnHovered, todoList, setTodlListAll}
         todoList.map((list) => {
             return <TodoItemList list={list} key={list.index} darkBtnHovered={darkBtnHovered} setTodlListAll={setTodlListAll}/>
         }) :
-        <PiFinnTheHuman size="100" className="emptyIcon"/>
+        <>
+          <PiFinnTheHuman size="100" className="emptyIcon"/> 
+          <span>할 일이 없습니다.</span>
+        </>
       }
 
 

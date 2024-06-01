@@ -25,20 +25,23 @@ export default function TodoList() {
       index : 2
     },
   ]
+
+  
+  
   const [originalTodoList, setOriginalTodoList] = useState(todoList);
-  const [todoListAll, setTodlListAll] = useState(todoList);
+  const [todoListAll, setTodlListAll] = useState(() => readTodosFromLocalStorage());
   const updateTodoList = (updatedList) => {
     setTodlListAll(updatedList);
   };
-
+  
   const orginUpdate = (updatedList) => {
     setOriginalTodoList(updatedList);
   }
-
-
+  
   useEffect(() => {
-    console.log("todoItem update:", originalTodoList);
-  }, [originalTodoList]);
+    localStorage.setItem('todos', JSON.stringify(todoListAll))
+  }, [todoListAll]);
+
 
   return (
    <>
@@ -55,5 +58,10 @@ export default function TodoList() {
     </header>
    </>
   );
+}
+
+function readTodosFromLocalStorage(){
+  const todos = localStorage.getItem('todos')
+  return todos ? JSON.parse(todos) : []
 }
 
